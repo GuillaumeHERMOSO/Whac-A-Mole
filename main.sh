@@ -9,7 +9,8 @@ do
     OPTION=$(whiptail --title "BIENVENUE SUR LE MENU PRINCIPAL" --menu "Choisissez votre action" 15 60 4 \
     "1" "Démarrer le jeu" \
     "2" "Quitter" \
-    "3" "Aide"  3>&1 1>&2 2>&3)
+    "3" "Aide"  \
+    "4" "Hight score" 4>&1 3>&2 1>&3 2>&4)
 
     exitstatus=$?
     if [ "$exitstatus" -eq 0 ]
@@ -17,6 +18,9 @@ do
         if [ "$OPTION" == '1' ]
         then
       	clear
+        echo "Pseudo: "
+        read pseudo
+
       	echo "Combien de temps veux-tu jouer ? (temps en seconde) "
       	read temps
       	duration=0
@@ -33,11 +37,18 @@ do
             	read -s -N 1 -t $(( $RANDOM % 3 + 1))
       	done
       	clear
-      	if [ -z $ok ] || [ $vie -eq "0" ]
+        echo $score - $vie - $pseudo - $temps "s \n">> hightscore.txt
+      	if [ -z $ok ] && [ $score -ge "0" ]
       	then
           		echo "######### GAGNE #########"
           		echo "Score : " $score
           		sleep 2
+          		clear
+        elif [ -z $ok ]
+        then
+              echo "######### Perdu #########"
+              echo " Score négatif : " $score
+              sleep 2
           		clear
       	fi
 
@@ -48,6 +59,11 @@ do
     then
         clear
         exit
+    elif [ "$OPTION" == '4' ]
+    then
+        clear
+        echo -e $(cat hightscore.txt |sort -nr)
+        sleep 5
     else
         echo "vous avez annulé"
     fi
