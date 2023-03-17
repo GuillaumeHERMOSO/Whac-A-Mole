@@ -1,3 +1,14 @@
 
 0 - 3 - Pierre - 11 s \n
 6 - 3 - Jacque - 30 s \n
+4 - 2 - Obélix - 50 s \n
+0 - 3 - d - d s \n
+15 - 2 - Astérix - 80 s \n
+15 - 3 - Julie la meilleure du monde - 80 s \n
+17 - 2 - J'ai des trop beau ongles bande de jaloux - 80 s \n
+16 - 2 - Cadena fermé les jaloux - 100 s \n
+0 - 3 - s - s s \n
+8 - 3 - d - 23 s \n
+14 - 3 - G - 80 s \n
+0 - 3 - Alerte au gogole - 30[23;2~à s \n
+-2 - 1 - Alerte au gogole - 50 s \n

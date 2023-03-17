@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#creation variable contenant 5 lettre pour choisir les mots affichés taupe et bombe
-Mole= 'taupe'
-Bomb= 'bombe'
-
-
 function augmentation_score ()
 {
 		score="$(( $1 + $2 ))"
@@ -21,7 +16,7 @@ function get_action()
 	my_case=$2
 
 	#gestion bombe
-	if [ $my_case == $Bomb ] && [ $vie -eq "1" ]
+	if [ $my_case == 'bombe' ] && [ $vie -eq "1" ]
 	then
 			clear
 			echo "######### PERDU #########"
@@ -30,13 +25,13 @@ function get_action()
 			duration=999999
 			ok=taperdugrosnullos
 
-	elif [ $my_case == $Bomb ] && [ $vie -gt "1" ]
+	elif [ $my_case == 'bombe' ] && [ $vie -gt "1" ]
 	then
 			vie=$(( $vie -1 ))
 	fi
 
 #gestion score
-	if [ $my_case == $Mole ]
+	if [ $my_case == 'taupe' ]
 	then
 			augmentation_score $score 1
 	else
@@ -87,9 +82,7 @@ Score: $score  	Vie: $vie
     |   "Q"   |   "S"   |   "D"   |
     +-------+-------+-------+
 	"
-		echo -e "\e[1;36m$GRID\e[0m"
-
-
+		echo m$GRID\e[0m"
 }
 
 function taupe1()
@@ -102,22 +95,22 @@ function taupe1()
 	if  [ "$CHOIX" -eq "1" ]
 	then
 	case "$PLAY" in
-		"1") a= $Bomb ;;
-		"2") z= $Bomb ;;
-		"3") e= $Bomb ;;
-		"4") q= $Bomb ;;
-		"5") s= $Bomb ;;
-		"6") d= $Bomb ;;
+		"1") a="bombe" ;;
+		"2") z="bombe" ;;
+		"3") e="bombe" ;;
+		"4") q="bombe" ;;
+		"5") s="bombe" ;;
+		"6") d="bombe" ;;
     esac
   else
 		#Taupe
 	case "$PLAY" in
-		"1") a= $Mole ;;
-		"2") z= $Mole ;;
-		"3") e= $Mole ;;
-		"4") q= $Mole ;;
-		"5") s= $Mole ;;
-		"6") d= $Mole ;;
+		"1") a="taupe" ;;
+		"2") z="taupe" ;;
+		"3") e="taupe" ;;
+		"4") q="taupe" ;;
+		"5") s="taupe" ;;
+		"6") d="taupe" ;;
     esac
   fi
 	print_grid

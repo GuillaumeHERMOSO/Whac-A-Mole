@@ -25,7 +25,7 @@ do
       	read temps
       	duration=0
       	score="0"
-      	vitesse="3"
+      	vitesse="1"
       	vie="3"
       	init_grid
         print_grid
