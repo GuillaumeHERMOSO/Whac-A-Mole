@@ -1,4 +1,5 @@
-# Whac-A-Mole
+# Whac-A-Mole 
+<img src="https://github.com/devicons/devicon/blob/master/icons/bash/bash-original.svg" title="bash"  alt="bash" width="60" height="60"/>&nbsp;
 
 ## Description
 
